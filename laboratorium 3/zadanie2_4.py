@@ -38,7 +38,7 @@ else:
 
         elif usr == 2:
             new_path = input("Podaj ścieżkę docelową kopiowania: ")
-            if os.path.isfile(new_name):
+            if os.path.isfile(new_path):
                 print("Plik o takiej nazwie już istnieje!")
             else:
                 if os.name == 'nt':

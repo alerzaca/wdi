@@ -14,5 +14,8 @@ key = hashlib.pbkdf2_hmac('sha256', passwd.encode('utf-8'), salt, 1000000)
 
 storage = salt + key
 
-with open(passwd_path, "wb+") as f:
-    f.write(storage)
+try:
+    with open(passwd_path, "wb+") as f:
+        f.write(storage)
+except OSError:
+    print("Uwaga, błąd dostępu do pliku")
